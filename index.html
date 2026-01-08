@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>赵赫的个人博客</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- 背景音乐 -->
+    <audio id="background-music" autoplay loop volume="0.3">
+        <source src="music/Comfort Zone.mp3" type="audio/mpeg">
+        您的浏览器不支持音频播放。
+    </audio>
+    <script>
+        // 页面加载时播放音乐
+        window.addEventListener('DOMContentLoaded', function() {
+            const music = document.getElementById('background-music');
+            
+            // 设置音量为30%
+            music.volume = 0.3;
+            
+            // 多种尝试播放的策略
+            const playMusic = () => {
+                // 尝试1: 直接播放
+                music.play().then(() => {
+                    console.log('音乐播放成功');
+                }).catch(error => {
+                    console.log('尝试1播放失败:', error);
+                    
+                    // 尝试2: 延迟100ms后播放
+                    setTimeout(() => {
+                        music.play().then(() => {
+                            console.log('音乐播放成功');
+                        }).catch(error => {
+                            console.log('尝试2播放失败:', error);
+                            
+                            // 尝试3: 使用用户交互事件
+                            const playOnInteraction = () => {
+                                music.play().then(() => {
+                                    console.log('音乐播放成功');
+                                    // 移除所有交互事件
+                                    document.removeEventListener('click', playOnInteraction);
+                                    document.removeEventListener('touchstart', playOnInteraction);
+                                    document.removeEventListener('keydown', playOnInteraction);
+                                }).catch(error => {
+                                    console.log('尝试3播放失败:', error);
+                                });
+                            };
+                            
+                            // 添加多种交互事件监听器
+                            document.addEventListener('click', playOnInteraction);
+                            document.addEventListener('touchstart', playOnInteraction);
+                            document.addEventListener('keydown', playOnInteraction);
+                        });
+                    }, 100);
+                });
+            };
+            
+            // 立即尝试播放
+            playMusic();
+        });
+    </script>
+</head>
+<body>
+    <!-- 渐变粉小泡泡 -->
+    <div class="pink-bubbles">
+        <div class="pink-bubble"></div>
+        <div class="pink-bubble"></div>
+        <div class="pink-bubble"></div>
+        <div class="pink-bubble"></div>
+        <div class="pink-bubble"></div>
+        <div class="pink-bubble"></div>
+        <div class="pink-bubble"></div>
+        <div class="pink-bubble"></div>
+        <div class="pink-bubble"></div>
+        <div class="pink-bubble"></div>
+        <div class="pink-bubble"></div>
+        <div class="pink-bubble"></div>
+        <div class="pink-bubble"></div>
+        <div class="pink-bubble"></div>
+        <div class="pink-bubble"></div>
+    </div>
+    
+    <!-- 动态爱心背景 -->
+    <div class="heart-background">
+        <div class="heart"></div>
+        <div class="heart"></div>
+        <div class="heart"></div>
+        <div class="heart"></div>
+        <div class="heart"></div>
+        <div class="heart"></div>
+        <div class="heart"></div>
+    </div>
+    
+    <!-- 外边缘虚化爱心 -->
+    <div class="edge-heart left"></div>
+    <div class="edge-heart left"></div>
+    <div class="edge-heart left"></div>
+    <div class="edge-heart right"></div>
+    <div class="edge-heart right"></div>
+    <div class="edge-heart right"></div>
+    <div class="edge-heart top"></div>
+    <div class="edge-heart top"></div>
+    
+    <!-- 樱花流星雨 - 全屏飘落 -->
+    <div class="meteor-container">
+        <div class="meteor-heart"></div>
+        <div class="meteor-heart"></div>
+        <div class="meteor-heart"></div>
+        <div class="meteor-heart"></div>
+        <div class="meteor-heart"></div>
+        <div class="meteor-heart"></div>
+        <div class="meteor-heart"></div>
+        <div class="meteor-heart"></div>
+        <div class="meteor-heart"></div>
+        <div class="meteor-heart"></div>
+        <div class="meteor-heart"></div>
+        <div class="meteor-heart"></div>
+        <div class="meteor-heart"></div>
+        <div class="meteor-heart"></div>
+        <div class="meteor-heart"></div>
+        <div class="meteor-heart"></div>
+        <div class="meteor-heart"></div>
+        <div class="meteor-heart"></div>
+        <div class="meteor-heart"></div>
+        <div class="meteor-heart"></div>
+        <div class="meteor-heart"></div>
+        <div class="meteor-heart"></div>
+        <div class="meteor-heart"></div>
+        <div class="meteor-heart"></div>
+        <div class="meteor-heart"></div>
+        <div class="meteor-heart"></div>
+        <div class="meteor-heart"></div>
+        <div class="meteor-heart"></div>
+        <div class="meteor-heart"></div>
+        <div class="meteor-heart"></div>
+        <div class="meteor-heart"></div>
+        <div class="meteor-heart"></div>
+        <div class="meteor-heart"></div>
+        <div class="meteor-heart"></div>
+        <div class="meteor-heart"></div>
+        <div class="meteor-heart"></div>
+        <div class="meteor-heart"></div>
+        <div class="meteor-heart"></div>
+        <div class="meteor-heart"></div>
+        <div class="meteor-heart"></div>
+    </div>
+    
+    <!-- 导航栏 -->
+    <nav class="navbar">
+        <div class="container">
+            <h1 class="logo">赵赫的个人博客</h1>
+            <ul class="nav-links">
+                <li><a href="index.html" class="active">首页</a></li>
+                <li><a href="about.html">关于我</a></li>
+                <li><a href="blog.html">博客详情</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- 主要内容 -->
+    <main class="container">
+        <!-- 欢迎区域 -->
+        <section class="welcome">
+            <!-- 个人照片背景 -->
+            <div class="welcome-photo-background"></div>
+            
+            <div class="welcome-content">
+                <h2>欢迎来到 <span class="highlight">赵赫</span> 的个人博客</h2>
+                <p>分享我的生活、学习和成长</p>
+                <div class="welcome-subtitle">
+                    <span class="subtitle-text">探索技术的乐趣</span>
+                    <span class="subtitle-text">记录生活的美好</span>
+                    <span class="subtitle-text">与你共同成长</span>
+                </div>
+                <div class="welcome-actions">
+                    <a href="blog.html" class="btn-primary">查看博客</a>
+                    <a href="about.html" class="btn-secondary">了解更多</a>
+                </div>
+            </div>
+            <div class="welcome-visual">
+                <div class="floating-hearts">
+                    <div class="floating-heart"></div>
+                    <div class="floating-heart"></div>
+                    <div class="floating-heart"></div>
+                    <div class="floating-heart"></div>
+                    <div class="floating-heart"></div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 图片轮播 -->
+        <section class="image-slider">
+            <h3>我的相册</h3>
+            <div class="slider-container">
+                <div class="slider-track">
+                    <div class="slider-item">
+                        <img src="旅行合照.jpg" alt="旅行合照">
+                    </div>
+                    <div class="slider-item">
+                        <img src="学校夜景.jpg" alt="学校夜景">
+                    </div>
+                    <div class="slider-item">
+                        <img src="我的相册.jpg" alt="我的相册">
+                    </div>
+                    <div class="slider-item">
+                        <img src="我的相册1.jpg" alt="我的相册1">
+                    </div>
+                    <div class="slider-item">
+                        <img src="我的相册2.jpg" alt="我的相册2">
+                    </div>
+                    <div class="slider-item">
+                        <img src="48c045ab38304c0a20897bb2b12fb06f.jpg" alt="个人照片">
+                    </div>
+                    <div class="slider-item">
+                        <img src="旅行合照.jpg" alt="旅行合照">
+                    </div>
+                    <div class="slider-item">
+                        <img src="学校夜景.jpg" alt="学校夜景">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 个人介绍 -->
+        <section class="about-me">
+            <div class="about-content">
+                <!-- 个人照片背景 -->
+                <div class="about-photo-background"></div>
+                
+                <div class="about-text">
+                    <h3>关于我</h3>
+                    <p>大家好，我是一名热爱编程和写作的大学生，目前就读于人工智能专业。我喜欢分享我的学习经验、生活感悟和技术心得，尤其是人工智能领域的探索。希望通过这个博客，能够和更多志同道合的朋友交流学习，共同成长。</p>
+                    <div class="skills">
+                        <h4>我的技能</h4>
+                        <div class="skill-tag">HTML</div>
+                        <div class="skill-tag">CSS</div>
+                        <div class="skill-tag">JavaScript</div>
+                        <div class="skill-tag">Python</div>
+                        <div class="skill-tag">Java</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 博客列表 -->
+        <section class="blog-list">
+            <h3>最新博客</h3>
+            <div class="blog-card">
+                <div class="blog-image-container">
+                    <img src="我的大学日常.jpg" alt="我的大学日常">
+                </div>
+                <div class="blog-info">
+                    <h4>我的大学如此</h4>
+                    <p>作为一名大一新生，我开始了全新的大学生活。</p>
+                    <a href="blog.html" class="read-more">阅读更多</a>
+                </div>
+            </div>
+            <div class="blog-card">
+                <div class="blog-image-container">
+                    <img src="我的编程日常.jpg" alt="我的编程日常">
+                    <div class="blog-category">编程</div>
+                    <div class="blog-date">2025-03-15</div>
+                </div>
+                <div class="blog-info">
+                    <h4>我的编程日常</h4>
+                    <p>学习编程的过程充满挑战，但也很有趣。</p>
+                    <a href="blog.html" class="read-more">阅读更多</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- 热门标签 -->
+        <section class="popular-tags">
+            <h3>热门标签</h3>
+            <div class="tags-container">
+                <a href="#" class="tag-item">编程</a>
+                <a href="#" class="tag-item">校园生活</a>
+                <a href="#" class="tag-item">阅读</a>
+                <a href="#" class="tag-item">学习</a>
+            </div>
+        </section>
+
+        <!-- 兴趣爱好 -->
+        <section class="hobbies">
+            <h3>我的兴趣爱好</h3>
+            <div class="hobby-grid">
+                <div class="hobby-item">
+                    <div class="hobby-image">
+                        <img src="https://picsum.photos/id/110/200/200" alt="编程">
+                    </div>
+                    <h4>编程</h4>
+                    <p>我喜欢编程，它让我能够创造出各种有趣的东西。</p>
+                </div>
+                <div class="hobby-item">
+                    <div class="hobby-image">
+                        <img src="https://picsum.photos/id/111/200/200" alt="阅读">
+                    </div>
+                    <h4>阅读</h4>
+                    <p>阅读是我放松的方式，也是我获取知识的途径。</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- 页脚 -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-info">
+                    <h3>赵赫的个人博客</h3>
+                    <p>分享我的生活、学习和成长历程</p>
+                </div>
+                <div class="footer-links">
+                    <a href="index.html">首页</a>
+                    <a href="about.html">关于我</a>
+                    <a href="blog.html">博客详情</a>
+                </div>
+                <div class="footer-social">
+                    <a href="#" class="social-icon">📧</a>
+                    <a href="#" class="social-icon">📱</a>
+                    <a href="#" class="social-icon">🐧</a>
+                    <a href="#" class="social-icon">📺</a>
+                </div>
+            </div>
+            <div class="footer-copyright">
+                <p>&copy; 2025 赵赫的个人博客. 保留所有权利.</p>
+            </div>
+        </div>
+    </footer>
+    
+    <!-- 装饰性背景元素 -->
+    <div class="decorative-elements">
+        <div class="deco-circle big-pink"></div>
+        <div class="deco-circle small-purple"></div>
+        <div class="deco-circle medium-blue"></div>
+        <div class="deco-wave"></div>
+        <div class="fire-cloud"></div>
+        <div class="fire-cloud"></div>
+        <div class="fire-cloud"></div>
+        <div class="fire-cloud"></div>
+    </div>
+    
+    <!-- 极光效果 -->
+    <div class="aurora-effect"></div>
+</body>
+</html>
